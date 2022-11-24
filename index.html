@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<!--
+    November 21, 2022
+    Usually, before you start programming any website or applications, you start with a 
+    design mockup. You never want to start programming right away. Professionals, have a 
+    UI first.
+    Also, you usually start with HTML first then CSS afterwards. 
+-->
+
+<body>
+    <!--Short to not have to type "div class" all the time, 
+        Use: ".proto" + Enter key
+    -->
+    <div class="proto-container">
+    <!--Use "Shift+Alt+DownArrowKey" to quick paste-->
+        <div class="proto"></div>
+        <div class="proto"></div>
+        <div class="proto"></div>
+        <div class="proto"></div>
+    </div>
+    
+    <!--Container element-->
+    <div class="container">
+        <!--Space to seperate the logo from the header and body text-->
+        <div class="inner">
+            <div class="left">
+                <img src="css/images/logo.png" alt="James Halim freelance Logo" class="logo">
+
+                <!--Wrapper for the content body text-->
+                <div class="content">
+                    <h1>James Halim <span>UX/UI Designer</span></h1>
+
+                    <p>Hello, my name is James. I am a UX/UI based in Vancouver. I have <b>2 years of experience</b>
+                        in working in <b>design agencies, tech agency, and freelance work.</b>
+                    </p>
+                    <p class="light"> Currently studying in SFU, Interactive Arts of Technology</p>
+                </div>
+
+            </div>
+            <div class="right">
+                <p>Interested? Email me for design services!</p>
+
+                <input type="text" name="email" id="email" placeholder="your email">
+                <button>Send Email</button>
+
+                <div class="attention">
+                    <img src="css/images/JamesHalimpfp.jpg" alt="James Halim Avatar" class="me">
+                    <img src="css/images/arrow.svg" alt="Arrow pointing to email form" class="arrow">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        let left = document.querySelector('.left');
+        let content = document.querySelector('.content');
+        let protos = document.querySelectorAll('.proto');
+
+        left.addEventListener('mousemove', (event) => {
+            let move = (event.clientX * 0.05) + 4;
+            let move2 = (event.clientX * 0.003);
+
+            //Changes the css style through JS using this
+            content.style.transform = `translateX(-${move2}%)`;
+
+            protos.forEach((proto) => {
+                proto.style.transform = `translateX(${move}%)`;
+            })
+        })
+
+    </script>
+
+</body>
+</html>
